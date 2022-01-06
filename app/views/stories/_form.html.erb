@@ -1,0 +1,12 @@
+hiiii
+<div>
+<%= form_for @story do |f| %>
+  <%= f.label :title, "title" %>
+  <%= f.text_field :title %> <br/>
+
+  <%= f.label :content, "content" %>
+  <%= f.text_area :content %>
+
+  <%= f.submit "Submit" %>
+<% end %>
+</div>

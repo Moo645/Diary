@@ -1,0 +1,17 @@
+<%= image_tag current_user.avatar if current_user.avatar %> <br/>
+<%= current_user.email %>'s diaries list <br/>
+<%= button_to 'Sign_out', destroy_user_session_path, method: :delete %>
+
+<hr>
+
+<%= link_to "Create Story", new_story_path %>
+
+<hr>
+
+<% @stories.each do |s| %>
+  Title: <%= link_to s.title, story_path(s) %> <br/>
+  Contnet: <%= s.content %> <br/>
+  <%= button_to 'Edit', edit_story_path(s), method: :get %>
+  <%= button_to 'Delete', story_path(s), method: :delete %>
+  <hr>
+<% end %>
